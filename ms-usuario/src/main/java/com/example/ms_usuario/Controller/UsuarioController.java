@@ -32,5 +32,17 @@ public class UsuarioController {
     public Usuario actualizar(@PathVariable Long id, @RequestBody Usuario usu){
         return serv.actualizarUsuario(usu);
     }
+    @GetMapping("/activo/{activo}")
+    public List <Usuario>buscarActivos(@PathVariable boolean activo){
+        return serv.buscarActivo(activo);
+    }
+    @GetMapping("/correo/{correo}")
+    public Usuario buscarPorCorreo(@PathVariable String correo) {
+        return serv.buscarPorCorreo(correo);
+    }
+    @GetMapping("/usuario/{usuario}")
+    public List<Usuario> buscarPorUsuario(@PathVariable String usuario) {
+        return serv.buscarPorUsuario(usuario);
+    }
 
 }
